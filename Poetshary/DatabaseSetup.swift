@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DatabaseSetup.swift
 //  Poetshary
 //
 //  Created by Noor Amer on 10/17/17.
@@ -9,19 +9,11 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
-
-  @IBOutlet weak var textView: UITextView!
+class DatabaseSetup {
   
   var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
   
-  override func viewWillLayoutSubviews() {
-    super.viewWillLayoutSubviews()
-//    updateDatabase()
-//    _ = retrievePoem(from: "A Body")?.tr/anslation
-  }
-  
-//  private func updateDatabase() {
+//  func updateDatabase() {
 //    container?.performBackgroundTask { [weak self] context in
 //      for (_, poemInfo) in data {
 //        _ = try? Poem.findOrCreatePoem(matching: poemInfo, in: context)
@@ -44,22 +36,4 @@ class ViewController: UIViewController {
       }
     }
   }
-  
-//  private func retrievePoem(from title: String) -> Poem? {
-//    var poem: Poem? = nil
-//    container?.performBackgroundTask {[weak self] context in
-//      poem = try? Poem.findOrCreatePoem(matching: [title], in: context)
-//      
-//      if let context2 = self?.container?.viewContext, poem != nil {
-//        context2.perform {
-//            self?.textView?.text = poem?.translation
-//        }
-//      }
-//      try? context.save()
-//    }
-//    
-//    return poem
-//  }
-
 }
-
